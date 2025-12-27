@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import { LayoutDashboard, Users, CalendarDays, BookOpen, Lightbulb, Settings, Newspaper, PartyPopper, UserCircle } from 'lucide-react';
 import Dashboard from './pages/Dashboard';
 import UserList from './pages/UserList';
@@ -49,25 +49,23 @@ const Sidebar = () => (
 
 function App() {
   return (
-    <Router>
-      <div className="admin-layout">
-        <Sidebar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/users" element={<UserList />} />
-            <Route path="/profile" element={<UserProfile />} />
-            <Route path="/calendar" element={<CalendarManager />} />
-            <Route path="/festivals" element={<FestivalManager />} />
-            <Route path="/stories" element={<StoryManager />} />
-            <Route path="/tips" element={<TipManager />} />
-            {/* Added new Route for FeatureManager */}
-            <Route path="/features" element={<FeatureManager />} />
-            <Route path="/news" element={<NewsManager />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <div className="admin-layout">
+      <Sidebar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/users" element={<UserList />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/calendar" element={<CalendarManager />} />
+          <Route path="/festivals" element={<FestivalManager />} />
+          <Route path="/stories" element={<StoryManager />} />
+          <Route path="/tips" element={<TipManager />} />
+          {/* Added new Route for FeatureManager */}
+          <Route path="/features" element={<FeatureManager />} />
+          <Route path="/news" element={<NewsManager />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 
